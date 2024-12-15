@@ -48,11 +48,11 @@ async function main() {
   const TOKENS_PER_ETH = await yiDengToken.TOKENS_PER_ETH();
   console.log("TOKENS_PER_ETH:", TOKENS_PER_ETH.toString());
   const remainingSupply = await yiDengToken.remainingMintableSupply();
-const maxETH = remainingSupply / TOKENS_PER_ETH; // 最大可用的 ETH
-const ethAmount = ethers.parseEther("0.1").lte(maxETH) ? ethers.parseEther("0.1") : maxETH;
+  const maxETH = remainingSupply / TOKENS_PER_ETH; // 最大可用的 ETH
+  const ethAmount = ethers.parseEther("0.1") < (maxETH) ? ethers.parseEther("0.1") : maxETH;
 
 // 购买代币
-await yiDengToken.buyWithETH({ value: ethAmount });
+/* await yiDengToken.buyWithETH({ value: ethAmount });
 console.log("Tokens purchased with adjusted ETH amount");
 
   await yiDengToken.buyWithETH({ value: ethAmount });
@@ -64,7 +64,7 @@ console.log("Tokens purchased with adjusted ETH amount");
   const balance = await yiDengToken.balanceOf(deployer.address);
   console.log("Current balance:", balance.toString());
   await yiDengToken.transfer(await techArticleDAO.getAddress(), rewardAmount);
-  console.log("Transferred reward tokens to TechArticleDAO");
+  console.log("Transferred reward tokens to TechArticleDAO"); */
 
 
   // 打印最终地址和余额
