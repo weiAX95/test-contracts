@@ -58,7 +58,7 @@ console.log("Tokens purchased with adjusted ETH amount");
   await yiDengToken.buyWithETH({ value: ethAmount });
   console.log("Tokens purchased");
 
-  // 7. 将代币转移给 TechArticleDAO
+  7. 将代币转移给 TechArticleDAO
   console.log("Transferring tokens to TechArticleDAO...");
   const rewardAmount = ethers.parseUnits("50", "0"); // 减少到只转移 50 YD
   const balance = await yiDengToken.balanceOf(deployer.address);
